@@ -37,7 +37,7 @@ const Renderer = () => {
         $('body').append(endDiv);
         endDiv.animate({bottom: '0'}, 1000);
         
-        const para = '<p id="title">Time\'s up<br></p>';
+        const para = '<p id="title">Time is up<br></p>';
         const para2 = `<p class="end-text">You made it to level ${level}, with the score of ${score}</p>`;
         const para3 = '<p class="end-text">Refresh the page to play again</p>';
         
