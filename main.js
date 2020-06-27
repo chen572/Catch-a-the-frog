@@ -1,19 +1,21 @@
-const frogs = CatchAFrog();
+const fruit = CutAFruit();
 const render = Renderer();
 
+
+// Start game event listener
 $('#start-button').click(() => {
-    render.renderFrogs(frogs.getFrogs());
-})
+    render.renderFruits(fruit.getFruits());
+    fruit.startTimer(render.renderTimer, render.renderEnd);
+});
 
-
+// On every fruit that cut
 $('#play-area').on('mouseenter', 'i', event => {
-    frogs.addScore()
-    const frogID = $(event.currentTarget).data().id;
+    fruit.addScore()
+    
+    const fruitID = $(event.currentTarget).data().id;
 
-    frogs.removeFrogs(frogID);
+    fruit.removeFruits(fruitID);
+    fruit.checkIfFinishedLevel()();
 
-    frogs.checkIfFinishedLevel()();
-
-
-    render.renderFrogs(frogs.getFrogs(), frogs.score);
-})
+    render.renderFruits(fruit.getFruits(), fruit.getScore(), fruit.getLevel());
+});
