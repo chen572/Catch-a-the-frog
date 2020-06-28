@@ -30,8 +30,8 @@ body {
 }
 
 #end {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #1E3F20;
     position: absolute;
     bottom: 100%;
@@ -46,10 +46,12 @@ body {
 
 #title {
     font-size: 100px;
+    display: flex;
 }
 
 .end-text {
     font-size: 56px;
+    display: flex;
 }
 
 .timer {
